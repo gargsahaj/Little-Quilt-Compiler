@@ -1,0 +1,84 @@
+    (LET
+        (DECLS
+            (FUN f
+                (FORMAL PARAM 
+x
+                    (FORMAL PARAM 
+y
+                    )
+                )
+                (sew
+                    (CALL VAL
+                        (x
+                        )
+                    )
+                    (CALL VAL
+                        (y
+                        )
+                    )
+                )
+            )
+        (DECLS
+            (VAL aa=
+                (turn
+    (CALL FUN f
+        (ACTUAL PARAMS 
+            (ACTUAL PARAMS 
+                (b
+                )
+            )
+            (a
+            )
+        )
+    )
+)
+)
+)
+)
+(CALL VAL
+(aa
+)
+)
+)
+    (LET
+        (DECLS
+            (FUN f
+                (FORMAL PARAM 
+x
+                    (FORMAL PARAM 
+y
+                    )
+                )
+                (sew
+                    (CALL VAL
+                        (x
+                        )
+                    )
+                    (CALL VAL
+                        (y
+                        )
+                    )
+                )
+            )
+        (DECLS
+            (VAL aa=
+                (turn
+    (CALL FUN f
+        (ACTUAL PARAMS 
+            (ACTUAL PARAMS 
+                (b
+                )
+            )
+            (a
+            )
+        )
+    )
+)
+)
+)
+)
+(CALL VAL
+(aa
+)
+)
+)

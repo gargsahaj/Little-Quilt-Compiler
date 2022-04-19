@@ -1,0 +1,344 @@
+Terminals unused in grammar
+
+   SYNERROR
+
+
+Grammar
+
+    0 $accept: Start $end
+
+    1 Start: Expr
+
+    2 Expr: TURN OB Expr CB
+    3     | SEW OB Expr COM Expr CB
+    4     | HDROW OB Expr CB
+    5     | TLROWS OB Expr CB
+    6     | HDCOL OB Expr CB
+    7     | TLCOLS OB Expr CB
+    8     | A
+    9     | B
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+SYNERROR (258)
+HDROW (259) 4
+TLROWS (260) 5
+HDCOL (261) 6
+TLCOLS (262) 7
+TURN (263) 2
+SEW (264) 3
+A (265) 8
+B (266) 9
+OB (267) 2 3 4 5 6 7
+CB (268) 2 3 4 5 6 7
+COM (269) 3
+
+
+Nonterminals, with rules where they appear
+
+$accept (15)
+    on left: 0
+Start (16)
+    on left: 1, on right: 0
+Expr (17)
+    on left: 2 3 4 5 6 7 8 9, on right: 1 2 3 4 5 6 7
+
+
+State 0
+
+    0 $accept: . Start $end
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Start  go to state 9
+    Expr   go to state 10
+
+
+State 1
+
+    4 Expr: HDROW . OB Expr CB
+
+    OB  shift, and go to state 11
+
+
+State 2
+
+    5 Expr: TLROWS . OB Expr CB
+
+    OB  shift, and go to state 12
+
+
+State 3
+
+    6 Expr: HDCOL . OB Expr CB
+
+    OB  shift, and go to state 13
+
+
+State 4
+
+    7 Expr: TLCOLS . OB Expr CB
+
+    OB  shift, and go to state 14
+
+
+State 5
+
+    2 Expr: TURN . OB Expr CB
+
+    OB  shift, and go to state 15
+
+
+State 6
+
+    3 Expr: SEW . OB Expr COM Expr CB
+
+    OB  shift, and go to state 16
+
+
+State 7
+
+    8 Expr: A .
+
+    $default  reduce using rule 8 (Expr)
+
+
+State 8
+
+    9 Expr: B .
+
+    $default  reduce using rule 9 (Expr)
+
+
+State 9
+
+    0 $accept: Start . $end
+
+    $end  shift, and go to state 17
+
+
+State 10
+
+    1 Start: Expr .
+
+    $default  reduce using rule 1 (Start)
+
+
+State 11
+
+    4 Expr: HDROW OB . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 18
+
+
+State 12
+
+    5 Expr: TLROWS OB . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 19
+
+
+State 13
+
+    6 Expr: HDCOL OB . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 20
+
+
+State 14
+
+    7 Expr: TLCOLS OB . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 21
+
+
+State 15
+
+    2 Expr: TURN OB . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 22
+
+
+State 16
+
+    3 Expr: SEW OB . Expr COM Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 23
+
+
+State 17
+
+    0 $accept: Start $end .
+
+    $default  accept
+
+
+State 18
+
+    4 Expr: HDROW OB Expr . CB
+
+    CB  shift, and go to state 24
+
+
+State 19
+
+    5 Expr: TLROWS OB Expr . CB
+
+    CB  shift, and go to state 25
+
+
+State 20
+
+    6 Expr: HDCOL OB Expr . CB
+
+    CB  shift, and go to state 26
+
+
+State 21
+
+    7 Expr: TLCOLS OB Expr . CB
+
+    CB  shift, and go to state 27
+
+
+State 22
+
+    2 Expr: TURN OB Expr . CB
+
+    CB  shift, and go to state 28
+
+
+State 23
+
+    3 Expr: SEW OB Expr . COM Expr CB
+
+    COM  shift, and go to state 29
+
+
+State 24
+
+    4 Expr: HDROW OB Expr CB .
+
+    $default  reduce using rule 4 (Expr)
+
+
+State 25
+
+    5 Expr: TLROWS OB Expr CB .
+
+    $default  reduce using rule 5 (Expr)
+
+
+State 26
+
+    6 Expr: HDCOL OB Expr CB .
+
+    $default  reduce using rule 6 (Expr)
+
+
+State 27
+
+    7 Expr: TLCOLS OB Expr CB .
+
+    $default  reduce using rule 7 (Expr)
+
+
+State 28
+
+    2 Expr: TURN OB Expr CB .
+
+    $default  reduce using rule 2 (Expr)
+
+
+State 29
+
+    3 Expr: SEW OB Expr COM . Expr CB
+
+    HDROW   shift, and go to state 1
+    TLROWS  shift, and go to state 2
+    HDCOL   shift, and go to state 3
+    TLCOLS  shift, and go to state 4
+    TURN    shift, and go to state 5
+    SEW     shift, and go to state 6
+    A       shift, and go to state 7
+    B       shift, and go to state 8
+
+    Expr  go to state 30
+
+
+State 30
+
+    3 Expr: SEW OB Expr COM Expr . CB
+
+    CB  shift, and go to state 31
+
+
+State 31
+
+    3 Expr: SEW OB Expr COM Expr CB .
+
+    $default  reduce using rule 3 (Expr)
