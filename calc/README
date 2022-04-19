@@ -1,0 +1,8 @@
+calc.[yl]   : parser and scanner for simple calculator evaluating a single expression.
+acalc1.[yl] : parser and scanner (without actions) for advanced calculator evaluating 
+              multiple expressions (possibly containing variables) and assignment 
+              statements assigning values to variables.
+acalc2.[yl] : acalc1.[yl] augmented with actions. Uses a map to store values of variables
+              which are extracted when a variable is used in an expression.
+Makefile    : A makefile for the above. Change SCAN and PARSE definitions to create a 
+              different version of the calculator.
